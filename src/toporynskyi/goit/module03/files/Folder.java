@@ -10,6 +10,7 @@ public class Folder extends File {
 
     private String currentName = "Folder";
     private ArrayList<File> filesList = new ArrayList<>();
+    private ArrayList<Folder> foldersList = new ArrayList<>();
 
 
     public Folder(File... files){
@@ -23,7 +24,17 @@ public class Folder extends File {
         return this.filesList;
     }
 
-    public void setFilesInFolder(File... files){
+    public ArrayList<Folder> getFolderList() {
+        return this.foldersList;
+    }
+
+    public void setFoldersInFolder(Folder... folders) {
+        for (Folder d : folders) {
+            this.foldersList.add(d);
+        }
+    }
+
+    public void setFilesInFolder(File... files) {
         for (File f : files) {
             this.filesList.add(f);
         }
@@ -38,13 +49,18 @@ public class Folder extends File {
 
     public static void main(String[] args) {
 
-        Folder folder = new Folder(new TextFile(), new AudioFile(), new ImageFile(), new Folder());
+        Folder folder = new Folder(new TextFile(), new AudioFile(), new ImageFile());
 
-        folder.setFilesInFolder(new AudioFile(), new AudioFile(), new TextFile(), new Folder());
+        folder.setFilesInFolder(new AudioFile(), new AudioFile(), new TextFile());
+        folder.setFoldersInFolder(new Folder());
 
         for (File f : folder.getFilesList()){
             System.out.println(f.getCurrentName());
         }
+        for (Folder d : folder.getFolderList()){
+            System.out.println(d.getCurrentName());
+        }
+
     }
 
 }
