@@ -6,7 +6,6 @@ package toporynskyi.goit.module03.files;
 public class TextFile extends File {
 
     private String currentName = "TextFile";
-    private String currentType = "Type";
 
 
     @Override

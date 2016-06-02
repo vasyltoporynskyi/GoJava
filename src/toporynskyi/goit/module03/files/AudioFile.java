@@ -5,9 +5,8 @@ package toporynskyi.goit.module03.files;
  */
 public class AudioFile extends File {
 
-    private String currentName = "AudioFile";
     private String currentFormat = "Format";
-    private String currentType = "Type";
+
 
 
     @Override

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Folder extends File {
 
 
-    private String currentName = "Folder";
+ //   private String currentName = "Folder";
     private ArrayList<File> filesList = new ArrayList<>();
     private ArrayList<Folder> foldersList = new ArrayList<>();
 

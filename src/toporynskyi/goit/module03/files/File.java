@@ -5,8 +5,8 @@ package toporynskyi.goit.module03.files;
  */
 public abstract class File {
 
-    private String currentName = "Name";
-    private String currentType = "Type";
+    protected String currentName = "Name";
+    protected String currentType = "Type";
 
 
 

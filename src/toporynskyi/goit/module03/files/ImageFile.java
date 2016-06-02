@@ -6,7 +6,6 @@ package toporynskyi.goit.module03.files;
 public class ImageFile extends File {
 
     private String currentName = "ImageFile";
-    private String currentType = "Type";
 
 
     @Override
