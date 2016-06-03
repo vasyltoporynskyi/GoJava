@@ -1,13 +1,14 @@
 package toporynskyi.goit.module03.flowers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by grant on 5/31/16.
  */
 public class RoseBush extends Rose {
 
-    ArrayList<Rose> rosesList = new ArrayList<>();
+    List<Rose> rosesList = new ArrayList<>();
 
     public RoseBush(int amountOfRoses){
         super("Amazone", "Rose", "Yellow");

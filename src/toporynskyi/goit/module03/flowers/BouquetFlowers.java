@@ -1,13 +1,14 @@
 package toporynskyi.goit.module03.flowers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by grant on 5/31/16.
  */
 public class BouquetFlowers {
 
-    private ArrayList<Flower> flowersList = new ArrayList<>();
+    private List<Flower> flowersList = new ArrayList<>();
 
     public BouquetFlowers(Flower... flowers){
 
@@ -16,7 +17,7 @@ public class BouquetFlowers {
         }
     }
 
-    public ArrayList<Flower> getFlowersList() {
+    public List<Flower> getFlowersList() {
         return this.flowersList;
     }
 
