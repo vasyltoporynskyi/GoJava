@@ -5,7 +5,7 @@ package toporynskyi.goit.module04.distancePoint;
  */
 public class Distance {
 
-    public static void main (String... args) {
+    public static void main (String[] args) {
 
         Distance pointA = new Distance(-14, 20);
         Distance pointB = new Distance(8, 12);
