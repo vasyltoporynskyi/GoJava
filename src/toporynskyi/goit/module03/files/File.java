@@ -5,17 +5,24 @@ package toporynskyi.goit.module03.files;
  */
 public abstract class File {
 
-    private String currentName = "Name";
-    private String currentType = "Type";
+    protected String currentName;
+    protected String currentType;
+    protected int currentSize;
 
+
+    public File(String currentName, String currentType, int currentSize) {
+        this.currentName = currentName;
+        this.currentType = currentType;
+        this.currentSize = currentSize;
+    }
+
+    public File(String currentName) {
+        this.currentName = currentName;
+    }
 
 
     public String getCurrentName() {
         return currentName;
-    }
-
-    public String getCurrentType(){
-        return currentType;
     }
 
 }

@@ -5,21 +5,17 @@ package toporynskyi.goit.module03.files;
  */
 public class AudioFile extends File {
 
-    private String currentName = "AudioFile";
-    private String currentFormat = "Format";
-    private String currentType = "Type";
+    private String currentAudioFormat = "wav";
 
+
+    public AudioFile(String currentName, String currentType, int currentSize) {
+        super(currentName, currentType, currentSize);
+    }
 
     @Override
     public String getCurrentName() {
-        return currentName;
-    }
-    @Override
-    public String getCurrentType() {
-        return currentType;
+        return currentName + "." + currentAudioFormat + " (Type: " + currentType + ", Zise: " + currentSize + "MB)";
     }
 
-    public String getCurrentFormat() {
-        return currentFormat;
-    }
+
 }

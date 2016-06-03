@@ -5,17 +5,16 @@ package toporynskyi.goit.module03.files;
  */
 public class TextFile extends File {
 
-    private String currentName = "TextFile";
-    private String currentType = "Type";
+    private String currentTextFormat = "txt";
 
-
-    @Override
-    public String getCurrentName(){
-        return this.currentName;
+    public TextFile(String currentName, String currentType, int currentSize) {
+        super(currentName, currentType, currentSize);
     }
+
+
     @Override
-    public String getCurrentType() {
-        return currentType;
+    public String getCurrentName() {
+        return currentName + "." + currentTextFormat + " (Type: " + currentType + ", Zise: " + currentSize + "KB)";
     }
 
 }

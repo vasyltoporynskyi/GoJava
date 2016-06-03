@@ -5,16 +5,14 @@ package toporynskyi.goit.module03.files;
  */
 public class ImageFile extends File {
 
-    private String currentName = "ImageFile";
-    private String currentType = "Type";
+    private String currentImageFormat = "jpg";
 
-
-    @Override
-    public String getCurrentName(){
-        return this.currentName;
+    public ImageFile(String currentName, String currentType, int currentSize) {
+        super(currentName, currentType, currentSize);
     }
+
     @Override
-    public String getCurrentType() {
-        return currentType;
+    public String getCurrentName() {
+        return currentName + "." + currentImageFormat + " (Type: " + currentType + ", Zise: " + currentSize + "KB)";
     }
 }
