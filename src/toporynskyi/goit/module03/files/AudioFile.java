@@ -5,7 +5,7 @@ package toporynskyi.goit.module03.files;
  */
 public class AudioFile extends File {
 
-    private String currentAudioFormat = "wav";
+    protected String currentAudioFormat = "wav";
 
 
     public AudioFile(String currentName, String currentType, int currentSize) {

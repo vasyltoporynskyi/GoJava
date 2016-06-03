@@ -5,7 +5,7 @@ package toporynskyi.goit.module03.files;
  */
 public class ImageFile extends File {
 
-    private String currentImageFormat = "jpg";
+    protected String currentImageFormat = "jpg";
 
     public ImageFile(String currentName, String currentType, int currentSize) {
         super(currentName, currentType, currentSize);

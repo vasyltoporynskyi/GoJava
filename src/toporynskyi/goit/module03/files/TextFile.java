@@ -5,7 +5,7 @@ package toporynskyi.goit.module03.files;
  */
 public class TextFile extends File {
 
-    private String currentTextFormat = "txt";
+    protected String currentTextFormat = "txt";
 
     public TextFile(String currentName, String currentType, int currentSize) {
         super(currentName, currentType, currentSize);
