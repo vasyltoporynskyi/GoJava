@@ -5,7 +5,7 @@ package toporynskyi.goit.module03.instruments;
  */
 public abstract class MusicalInstrument {
 
-    private String currentString = "Musical instrument";
+    protected String currentString = "Musical instrument";
 
     public String getCurrentString(){
         return this.currentString;

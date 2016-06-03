@@ -5,7 +5,7 @@ package toporynskyi.goit.module03.flowers;
  */
 public abstract class Flower {
 
-    private String currentString = "Flower";
+    protected String currentString = "Flower";
 
     public String getCurrentString(){
         return this.currentString;
