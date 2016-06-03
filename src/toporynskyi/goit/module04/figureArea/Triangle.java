@@ -5,17 +5,17 @@ package toporynskyi.goit.module04.figureArea;
  */
 public class Triangle extends Figure {
 
-    protected double a;
-    protected double b;
+    protected double sideA;
+    protected double sideB;
 
-    public Triangle(double a, double b) {
-        this.a = a;
-        this.b = b;
+    public Triangle(double sideA, double sideB) {
+        this.sideA = sideA;
+        this.sideB = sideB;
     }
 
     @Override
     public double figureArea() {
-        return a * b / 2;
+        return sideA * sideB / 2;
     }
 
     @Override

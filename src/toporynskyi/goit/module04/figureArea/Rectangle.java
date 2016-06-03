@@ -5,18 +5,18 @@ package toporynskyi.goit.module04.figureArea;
  */
 public class Rectangle extends Figure {
 
-    protected double a;
-    protected double b;
+    protected double sideA;
+    protected double sideB;
 
-    public Rectangle(double a, double b) {
-        this.a = a;
-        this.b = b;
+    public Rectangle(double sideA, double sideB) {
+        this.sideA = sideA;
+        this.sideB = sideB;
     }
 
 
     @Override
     public double figureArea() {
-        return a * b;
+        return sideA * sideB;
     }
 
     @Override

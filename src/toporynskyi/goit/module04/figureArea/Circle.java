@@ -5,16 +5,16 @@ package toporynskyi.goit.module04.figureArea;
  */
 public class Circle extends Figure {
 
-    protected final double pi = 3.14;
-    protected double r;
+    protected final double Pi = 3.14;
+    protected double radius;
 
-    public Circle (double r){
-        this.r = r;
+    public Circle (double radius){
+        this.radius = radius;
     }
 
     @Override
     public double figureArea() {
-        return pi * ( r * r);
+        return Pi * ( radius * radius);
     }
 
     @Override
