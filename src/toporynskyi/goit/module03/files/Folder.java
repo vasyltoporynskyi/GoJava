@@ -13,7 +13,7 @@ public class Folder extends File {
 
 
     public Folder(File... files){
-        super("Folder");
+        super("Folder", "Empty");
 
         for (File f : files) {
             this.filesList.add(f);
@@ -40,6 +40,10 @@ public class Folder extends File {
         }
     }
 
+    @Override
+    public String getCurrentName() {
+        return currentName + " (Into: " + currentInto + ")";
+    }
 
 
     public static void main(String[] args) {

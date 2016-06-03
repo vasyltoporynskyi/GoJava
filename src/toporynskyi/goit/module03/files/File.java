@@ -8,6 +8,7 @@ public abstract class File {
     protected String currentName;
     protected String currentType;
     protected int currentSize;
+    protected String currentInto;
 
 
     public File(String currentName, String currentType, int currentSize) {
@@ -16,8 +17,9 @@ public abstract class File {
         this.currentSize = currentSize;
     }
 
-    public File(String currentName) {
+    public File(String currentName, String currentInto) {
         this.currentName = currentName;
+        this.currentInto = currentInto;
     }
 
 
