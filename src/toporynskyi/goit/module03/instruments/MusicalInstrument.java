@@ -5,10 +5,18 @@ package toporynskyi.goit.module03.instruments;
  */
 public abstract class MusicalInstrument {
 
-    protected String currentString = "Musical instrument";
+    protected String currentName;
+    protected String currentType;
 
-    public String getCurrentString(){
-        return this.currentString;
+
+    public MusicalInstrument(String currentName, String currentType) {
+        this.currentName = currentName;
+        this.currentType = currentType;
+    }
+
+
+    public String getCurrentName(){
+        return this.currentName + " : Brand, || Musical Instrument: " + currentType;
     }
 
 }

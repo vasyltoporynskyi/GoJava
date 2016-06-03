@@ -1,12 +1,13 @@
 package toporynskyi.goit.module03.instruments;
 
 import java.util.ArrayList;
+import java.util.List;
 /**
  * Created by grant on 5/31/16.
  */
 public class MusicShop {
 
-    private ArrayList<MusicalInstrument> instrumentsList = new ArrayList<>();
+    private List<MusicalInstrument> instrumentsList = new ArrayList<>();
 
     public MusicShop(MusicalInstrument... instruments){
 
@@ -15,7 +16,7 @@ public class MusicShop {
         }
     }
 
-    public ArrayList<MusicalInstrument> getInstrumentsList() {
+    public List<MusicalInstrument> getInstrumentsList() {
         return this.instrumentsList;
     }
 
@@ -27,12 +28,12 @@ public class MusicShop {
 
     public static void main(String[] args) {
 
-        MusicShop musicShop = new MusicShop(new Guitar(), new Piano(), new Trumpet());
+        MusicShop musicShop = new MusicShop(new Guitar("Trymbita", "Guitar"), new Piano("Baldwin", "Piano"), new Trumpet("Goldens", "Trumpet"));
 
-        musicShop.setInstrumentsInShop(new Piano(), new Guitar());
+        musicShop.setInstrumentsInShop(new Piano("Baldwin", "Piano"), new Guitar("Trymbita", "Guitar"));
 
         for (MusicalInstrument m : musicShop.getInstrumentsList()){
-            System.out.println(m.getCurrentString());
+            System.out.println(m.getCurrentName());
         }
     }
 }

@@ -5,10 +5,7 @@ package toporynskyi.goit.module03.instruments;
  */
 public class Trumpet extends MusicalInstrument{
 
-    private String currentString = "Trumpet";
-
-    @Override
-    public String getCurrentString(){
-        return this.currentString;
+    public Trumpet(String currentName, String currentType) {
+        super(currentName, currentType);
     }
 }

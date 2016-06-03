@@ -5,11 +5,7 @@ package toporynskyi.goit.module03.instruments;
  */
 public class Guitar extends MusicalInstrument {
 
-    private String currentString = "Guitar";
-
-    @Override
-    public String getCurrentString(){
-        return this.currentString;
+    public Guitar(String currentName, String currentType) {
+        super(currentName, currentType);
     }
-
 }
