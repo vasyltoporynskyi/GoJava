@@ -8,7 +8,8 @@ public class ImageFile extends File {
     protected String currentImageFormat = "jpg";
 
     public ImageFile(String currentName, String currentType, int currentSize) {
-        super(currentName, currentType, currentSize);
+        super(currentName, currentType);
+        this.currentSize = currentSize;
     }
 
     @Override

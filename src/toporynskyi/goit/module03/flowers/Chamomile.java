@@ -5,10 +5,7 @@ package toporynskyi.goit.module03.flowers;
  */
 public class Chamomile extends Flower {
 
-    private String currentString = "Chamomile";
-
-    @Override
-    public String getCurrentString(){
-        return this.currentString;
+    public Chamomile(String currentName, String currentType, String currentColor) {
+        super(currentName, currentType, currentColor);
     }
 }

@@ -28,12 +28,12 @@ public class BouquetFlowers {
 
     public static void main(String[] args) {
 
-        BouquetFlowers bouquet = new BouquetFlowers(new Rose(), new Chamomile(), new Aster());
+        BouquetFlowers bouquet = new BouquetFlowers(new Rose("Amazone", "Rose", "White"), new Chamomile("Field" , "Chamomile", "White"), new Aster("Amellus" , "Aster", "Pink"));
 
-        bouquet.setFlowersInBouquet(new Tulip(), new RoseBush(7));
+        bouquet.setFlowersInBouquet(new Tulip("Amazone", "Tulip", "Red"), new RoseBush(7));
 
         for (Flower f : bouquet.getFlowersList()){
-            System.out.println(f.getCurrentString());
+            System.out.println(f.getCurrentName());
         }
     }
 

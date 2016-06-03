@@ -5,10 +5,7 @@ package toporynskyi.goit.module03.flowers;
  */
 public class Tulip extends Flower {
 
-    private String currentString = "Tulip";
-
-    @Override
-    public String getCurrentString(){
-        return this.currentString;
+    public Tulip(String currentName, String currentType, String currentColor) {
+        super(currentName, currentType, currentColor);
     }
 }

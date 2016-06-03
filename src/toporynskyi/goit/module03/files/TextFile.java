@@ -8,7 +8,8 @@ public class TextFile extends File {
     protected String currentTextFormat = "txt";
 
     public TextFile(String currentName, String currentType, int currentSize) {
-        super(currentName, currentType, currentSize);
+        super(currentName, currentType);
+        this.currentSize = currentSize;
     }
 
 

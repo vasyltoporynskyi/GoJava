@@ -9,7 +9,8 @@ public class AudioFile extends File {
 
 
     public AudioFile(String currentName, String currentType, int currentSize) {
-        super(currentName, currentType, currentSize);
+        super(currentName, currentType);
+        this.currentSize = currentSize;
     }
 
     @Override

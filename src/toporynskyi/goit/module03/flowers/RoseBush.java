@@ -7,42 +7,29 @@ import java.util.ArrayList;
  */
 public class RoseBush extends Rose {
 
-    private String currentString = "Rosebush";
-
     ArrayList<Rose> rosesList = new ArrayList<>();
 
     public RoseBush(int amountOfRoses){
+        super("Amazone", "Rose", "Yellow");
 
         for (int i = 0; i < amountOfRoses; i++) {
-            Rose rose = new Rose();
+            Rose rose = new Rose("Amazone", "Rose", "Yellow");
             this.rosesList.add(rose);
         }
     }
 
-    public ArrayList<Rose> getRosesList() {
-
-        return this.rosesList;
-    }
-
-    public void setRosesToBush(int amountOfRoses) {
-
-        for (int i = 0; i < amountOfRoses; i++) {
-            Rose rose = new Rose();
-            this.rosesList.add(rose);
-        }
-    }
 
     @Override
-    public String getCurrentString() {
+    public String getCurrentName() {
 
         if (rosesList.size() > 1) {
-            return this.currentString + ": " + rosesList.size() + " roses";
+            return this.currentName + " : Sort, || RoseBush: " + rosesList.size() + " roses" + ", || Color: " + currentColor;
         }
 
         if (rosesList.size() == 1) {
-            return this.currentString + ": " + rosesList.size() + " rose";
+            return this.currentName + " : Sort, || Rose: " + rosesList.size() + " rose" + ", || Color: " + currentColor;
         }
 
-        return this.currentString;
+        return this.currentName;
     }
 }

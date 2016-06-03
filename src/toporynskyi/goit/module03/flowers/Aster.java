@@ -5,10 +5,8 @@ package toporynskyi.goit.module03.flowers;
  */
 public class Aster extends Flower {
 
-    private String currentString = "Aster";
-
-    @Override
-    public String getCurrentString(){
-        return this.currentString;
+    public Aster(String currentName, String currentType, String currentColor) {
+        super(currentName, currentType, currentColor);
     }
+
 }

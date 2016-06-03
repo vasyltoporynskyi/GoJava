@@ -1,6 +1,7 @@
 package toporynskyi.goit.module03.files;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by grant on 5/31/16.
@@ -8,8 +9,7 @@ import java.util.ArrayList;
 public class Folder extends File {
 
 
-    private ArrayList<File> filesList = new ArrayList<>();
-    private ArrayList<Folder> foldersList = new ArrayList<>();
+    private List<File> filesList = new ArrayList<>();
 
 
     public Folder(File... files){
@@ -20,18 +20,8 @@ public class Folder extends File {
         }
     }
 
-    public ArrayList<File> getFilesList() {
+    public List<File> getFilesList() {
         return this.filesList;
-    }
-
-    public ArrayList<Folder> getFolderList() {
-        return this.foldersList;
-    }
-
-    public void setFoldersInFolder(Folder... folders) {
-        for (Folder d : folders) {
-            this.foldersList.add(d);
-        }
     }
 
     public void setFilesInFolder(File... files) {
@@ -51,13 +41,10 @@ public class Folder extends File {
         Folder folder = new Folder(new TextFile("TaxList", "TXT", 256), new AudioFile("Thunderstruck", "MP3", 5), new ImageFile("SkyImage", "JPG", 2048));
 
         folder.setFilesInFolder(new AudioFile("Highway to hell", "WAV", 45), new AudioFile("Back in black", "WAV", 33), new TextFile("OrderList", "TXT", 128));
-        folder.setFoldersInFolder(new Folder());
+        folder.setFilesInFolder(new Folder());
 
         for (File f : folder.getFilesList()){
             System.out.println(f.getCurrentName());
-        }
-        for (Folder d : folder.getFolderList()){
-            System.out.println(d.getCurrentName());
         }
 
     }
