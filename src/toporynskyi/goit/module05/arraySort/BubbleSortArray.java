@@ -9,7 +9,6 @@ public class BubbleSortArray {
 
     public static void main(String[] args) {
 
-
         int [] array = new int[20];
         Random randomAdd = new Random();
 
@@ -21,30 +20,22 @@ public class BubbleSortArray {
         }
 
         System.out.print("\n");
+        System.out.print("Bubble sort result: \n");
 
         int min = 0;
         int tmp;
 
-        System.out.print("Bubble sort result: \n");
         for(int i=0; i<array.length; i++)
         {
             min = i;
-            for(int j=i; j< array.length; j++)
-            {
+            for(int j=i; j< array.length; j++) {
                 if(array[j] < array[min])
                     min = j;
-
             }
-
-
             tmp = array[i];
             array[i] = array[min];
             array[min] = tmp;
             System.out.print(array[i] + "  ");
         }
-
-
-
-
     }
 }
