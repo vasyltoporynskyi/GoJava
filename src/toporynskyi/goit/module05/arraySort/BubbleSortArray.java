@@ -13,9 +13,11 @@ public class BubbleSortArray {
         int [] array = new int[20];
         Random randomAdd = new Random();
 
+        System.out.print("Random Array: \n");
+
         for(int i = 0; i < array.length; i++){
             array[i] = randomAdd.nextInt(100);
-          System.out.print(array[i] + " | ");
+          System.out.print(array[i] + "  ");
         }
 
         System.out.print("\n");
@@ -23,6 +25,7 @@ public class BubbleSortArray {
         int min = 0;
         int tmp;
 
+        System.out.print("Bubble sort result: \n");
         for(int i=0; i<array.length; i++)
         {
             min = i;
@@ -32,10 +35,12 @@ public class BubbleSortArray {
                     min = j;
 
             }
+
+
             tmp = array[i];
             array[i] = array[min];
             array[min] = tmp;
-            System.out.print(array[i] + " | ");
+            System.out.print(array[i] + "  ");
         }
 
 
