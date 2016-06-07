@@ -1,4 +1,4 @@
-package toporynskyi.goit.module05;
+package toporynskyi.goit.module05.maxminArray;
 
 import java.util.Random;
 
