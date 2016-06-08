@@ -43,7 +43,7 @@ public class BubbleSortArray {
         }
 
         BubbleSortArray.bubbleSort(array);
-        System.out.println("\n" + " Sorted Array");
+        System.out.println("\n" + " Sorted Array:");
         BubbleSortArray.showResults(array);
     }
 }
