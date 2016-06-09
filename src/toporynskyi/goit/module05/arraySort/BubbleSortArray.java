@@ -1,6 +1,6 @@
 package toporynskyi.goit.module05.arraySort;
 
-import toporynskyi.goit.module06.NegativeElementException;
+import toporynskyi.goit.module06.taskExceptions.NegativeElementException;
 
 import java.util.Random;
 

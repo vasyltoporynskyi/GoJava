@@ -1,4 +1,4 @@
-package toporynskyi.goit.module06;
+package toporynskyi.goit.module06.taskExceptions;
 
 /**
  * Created by grant on 6/9/16.

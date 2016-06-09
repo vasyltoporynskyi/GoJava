@@ -1,6 +1,6 @@
 package toporynskyi.goit.module05.maxminArray;
 
-import toporynskyi.goit.module06.NegativeElementException;
+import toporynskyi.goit.module06.taskExceptions.NegativeElementException;
 
 import java.util.Random;
 
@@ -32,7 +32,7 @@ public class FindMaxMin {
 
     public static void main(String[] args) {
 
-        int[] array = new int[20];
+        int[] array = new int[1];
         Random randomAdd = new Random();
 
         for (int i = 0; i < array.length; i++) {
