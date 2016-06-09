@@ -1,5 +1,7 @@
 package toporynskyi.goit.module05.maxminArray;
 
+import toporynskyi.goit.module06.NegativeElementException;
+
 import java.util.Random;
 
 /**
@@ -37,9 +39,18 @@ public class FindMaxMin {
             array[i] = randomAdd.nextInt(100);
             System.out.print(array[i] + " | ");
         }
-        System.out.println("\n");
-        System.out.println("Min = " + FindMaxMin.findMinElement(array) + "\n");
-        System.out.println("Max = " + FindMaxMin.findMaxElement(array) + "\n");
+
+        try {
+            System.out.println("\n");
+            System.out.println("Min = " + FindMaxMin.findMinElement(array) + "\n");
+            System.out.println("Max = " + FindMaxMin.findMaxElement(array) + "\n");
+            if (array.length < 2) {
+                throw new NegativeElementException(array.length);
+            }
+        } catch (NegativeElementException e) {
+            e.printStackTrace();
+            System.out.print("\n Error, wrong number of elements!" + " You have only: " + e.getElemet());
+        }
 
     }
 
