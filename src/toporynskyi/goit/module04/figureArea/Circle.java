@@ -1,5 +1,7 @@
 package toporynskyi.goit.module04.figureArea;
 
+import java.util.IllegalFormatException;
+
 /**
  * Created by grant on 6/3/16.
  */
@@ -13,12 +15,19 @@ public class Circle extends Figure {
     }
 
     @Override
-    public double figureArea() {
-        return Pi * ( radius * radius);
+    public double figureArea() throws Exception {
+        try {
+            if (radius <= 0) {
+                throw new Exception();
+            }
+        } catch (IllegalFormatException e) {
+            e.getCause();
+        }
+        return Pi * (radius * radius);
     }
 
     @Override
-    public void showResult() {
+    public void showResult() throws Exception {
         System.out.println("Circle Area = " + figureArea() + " сm");
     }
 

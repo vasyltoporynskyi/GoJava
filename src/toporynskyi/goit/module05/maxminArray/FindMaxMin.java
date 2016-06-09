@@ -32,28 +32,33 @@ public class FindMaxMin {
 
     public static void main(String[] args) {
 
-        int[] array = new int[1];
+        int[] array = new int[10];
         Random randomAdd = new Random();
 
         for (int i = 0; i < array.length; i++) {
             array[i] = randomAdd.nextInt(100);
-            System.out.print(array[i] + " | ");
+            System.out.print(array[i] + "  ");
         }
 
         try {
-            System.out.println("\n");
-            System.out.println("Min = " + FindMaxMin.findMinElement(array) + "\n");
-            System.out.println("Max = " + FindMaxMin.findMaxElement(array) + "\n");
+
             if (array.length < 2) {
                 throw new NegativeElementException(array.length);
+            } else {
+                System.out.println("\n");
+                System.out.println("Min = " + FindMaxMin.findMinElement(array) + "\n");
+                System.out.println("Max = " + FindMaxMin.findMaxElement(array) + "\n");
             }
         } catch (NegativeElementException e) {
+            System.out.print("\n Error, wrong number of elements!" + " You have only: " + e.getElemet()+ "\n");
             e.printStackTrace();
-            System.out.print("\n Error, wrong number of elements!" + " You have only: " + e.getElemet());
+
+        }
+
         }
 
     }
 
 
 
-}
+

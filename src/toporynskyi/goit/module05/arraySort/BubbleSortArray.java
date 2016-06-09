@@ -11,18 +11,29 @@ public class BubbleSortArray {
 
     public static void bubbleSort(int[] array) {
 
-        int min;
-        int tmp;
+        try {
 
-        for (int i = 0; i < array.length; i++) {
-            min = i;
-            for (int j = i; j < array.length; j++) {
-                if (array[j] < array[min])
-                    min = j;
+            int min;
+            int tmp;
+
+            for (int i = 0; i < array.length; i++) {
+                min = i;
+                for (int j = i; j < array.length; j++) {
+                    if (array[j] < array[min])
+                        min = j;
+                }
+                tmp = array[i];
+                array[i] = array[min];
+                array[min] = tmp;
             }
-            tmp = array[i];
-            array[i] = array[min];
-            array[min] = tmp;
+
+            if (array.length < 2) {
+                throw new NegativeElementException(array.length);
+            }
+        } catch (NegativeElementException e) {
+            e.printStackTrace();
+            System.out.print("\n Error, wrong number of elements!" + " You have only: " + e.getElemet());
+            System.out.println("\n");
         }
     }
 
@@ -35,7 +46,7 @@ public class BubbleSortArray {
 
     public static void main(String[] args) {
 
-        int[] array = new int[11];
+        int[] array = new int[20];
         Random randomAdd = new Random();
         System.out.print(" Random Array: \n");
         for (int i = 0; i < array.length; i++) {
@@ -44,17 +55,12 @@ public class BubbleSortArray {
         }
 
 
-        try {
+
             BubbleSortArray.bubbleSort(array);
             System.out.println("\n" + " Sorted Array:");
             BubbleSortArray.showResults(array);
-            if (array.length < 20) {
-                throw new NegativeElementException(array.length);
-            }
-        } catch (NegativeElementException e) {
-            e.printStackTrace();
-            System.out.print("\n Error, wrong number of elements!" + " You have only: " + e.getElemet());
-            System.out.println("\n");
-        }
+
     }
 }
+
+
