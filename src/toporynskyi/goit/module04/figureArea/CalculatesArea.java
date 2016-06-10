@@ -8,7 +8,7 @@ public class CalculatesArea {
 
     public static void main(String[] args) throws Exception {
 
-        Figure circle = new Circle(12);
+        Figure circle = new Circle(11);
         Figure triangle = new Triangle(12, 10);
         Figure rectangle = new Rectangle(45, 10);
 

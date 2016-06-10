@@ -21,7 +21,7 @@ public class Circle extends Figure {
                 throw new Exception();
             }
         } catch (IllegalFormatException e) {
-            e.getCause();
+            e.toString();
         }
         return Pi * (radius * radius);
     }
