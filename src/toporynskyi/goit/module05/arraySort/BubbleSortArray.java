@@ -1,7 +1,6 @@
 package toporynskyi.goit.module05.arraySort;
 
-import toporynskyi.goit.module06.taskExceptions.NegativeElementException;
-
+import java.util.Scanner;
 import java.util.Random;
 
 /**
@@ -10,8 +9,6 @@ import java.util.Random;
 public class BubbleSortArray {
 
     public static void bubbleSort(int[] array) {
-
-        try {
 
             int min;
             int tmp;
@@ -27,14 +24,6 @@ public class BubbleSortArray {
                 array[min] = tmp;
             }
 
-            if (array.length < 2) {
-                throw new NegativeElementException(array.length);
-            }
-        } catch (NegativeElementException e) {
-            e.printStackTrace();
-            System.out.print("\n Error, wrong number of elements!" + " You have only: " + e.getElemet());
-            System.out.println("\n");
-        }
     }
 
     public static void showResults(int[] array) {
@@ -46,19 +35,36 @@ public class BubbleSortArray {
 
     public static void main(String[] args) {
 
-        int[] array = new int[20];
+
+        System.out.println("Enter Array length: ");
+        final Scanner scanner = new Scanner(System.in);
+        final String userInput = String.valueOf(scanner.next());
+
+        int arrayLength;
+        try {
+
+            arrayLength = Integer.parseInt(String.valueOf(userInput));
+        } catch (NumberFormatException ex) {
+            System.out.print("Error Value! \n" + "Enter Integer Value: \n");
+            String userInput2 = String.valueOf(scanner.next());
+            arrayLength = Integer.parseInt(String.valueOf(userInput2));
+        }
+
+        int[] array = new int[arrayLength];
         Random randomAdd = new Random();
+
         System.out.print(" Random Array: \n");
+
+
         for (int i = 0; i < array.length; i++) {
             array[i] = randomAdd.nextInt(100);
             System.out.print(array[i] + "  ");
         }
 
 
-
-            BubbleSortArray.bubbleSort(array);
-            System.out.println("\n" + " Sorted Array:");
-            BubbleSortArray.showResults(array);
+        BubbleSortArray.bubbleSort(array);
+        System.out.println("\n" + " Sorted Array:");
+        BubbleSortArray.showResults(array);
 
     }
 }

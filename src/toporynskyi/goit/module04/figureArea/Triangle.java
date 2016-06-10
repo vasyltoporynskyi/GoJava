@@ -1,6 +1,5 @@
 package toporynskyi.goit.module04.figureArea;
 
-import java.util.IllegalFormatException;
 
 /**
  * Created by grant on 6/3/16.
@@ -16,20 +15,12 @@ public class Triangle extends Figure {
     }
 
     @Override
-    public double figureArea() throws Exception {
-        try {
-            if (sideA <= 0 || sideB <= 0) {
-                throw new Exception();
-            }
-        } catch (IllegalFormatException e) {
-            e.getCause();
-        }
-
+    public double figureArea() {
         return sideA * sideB / 2;
     }
 
     @Override
-    public void showResult() throws Exception {
+    public void showResult() {
         System.out.println("Triangle Area = " + figureArea() + " сm");
     }
 

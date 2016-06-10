@@ -1,8 +1,8 @@
 package toporynskyi.goit.module05.maxminArray;
 
-import toporynskyi.goit.module06.taskExceptions.NegativeElementException;
-
 import java.util.Random;
+import java.util.Scanner;
+
 
 /**
  * Created by grant on 6/6/16.
@@ -32,32 +32,36 @@ public class FindMaxMin {
 
     public static void main(String[] args) {
 
-        int[] array = new int[10];
+        System.out.println("Enter Array length: ");
+        final Scanner scanner = new Scanner(System.in);
+        final String userInput = String.valueOf(scanner.next());
+
+        int arrayLength;
+        try {
+
+            arrayLength = Integer.parseInt(String.valueOf(userInput));
+        } catch (NumberFormatException ex) {
+            System.out.print("Error Value! \n" + "Enter Integer Value: \n");
+            String userInput2 = String.valueOf(scanner.next());
+            arrayLength = Integer.parseInt(String.valueOf(userInput2));
+
+        }
+
+
+        int[] array = new int[arrayLength];
         Random randomAdd = new Random();
 
         for (int i = 0; i < array.length; i++) {
             array[i] = randomAdd.nextInt(100);
             System.out.print(array[i] + "  ");
         }
-
-        try {
-
-            if (array.length < 2) {
-                throw new NegativeElementException(array.length);
-            } else {
                 System.out.println("\n");
                 System.out.println("Min = " + FindMaxMin.findMinElement(array) + "\n");
                 System.out.println("Max = " + FindMaxMin.findMaxElement(array) + "\n");
-            }
-        } catch (NegativeElementException e) {
-            System.out.print("\n Error, wrong number of elements!" + " You have only: " + e.getElemet()+ "\n");
-            e.printStackTrace();
-
         }
+}
 
-        }
 
-    }
 
 
 

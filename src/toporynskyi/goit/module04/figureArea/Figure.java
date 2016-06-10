@@ -5,8 +5,7 @@ package toporynskyi.goit.module04.figureArea;
  */
 public abstract class Figure {
 
-    public abstract double figureArea() throws Exception;
+    public abstract double figureArea();
 
-    public abstract void showResult() throws Exception;
-
+    public abstract void showResult();
 }

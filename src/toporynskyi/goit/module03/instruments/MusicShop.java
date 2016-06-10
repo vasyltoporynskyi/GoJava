@@ -2,6 +2,7 @@ package toporynskyi.goit.module03.instruments;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 /**
  * Created by grant on 5/31/16.
  */
@@ -26,6 +27,13 @@ public class MusicShop {
         }
     }
 
+    public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order){
+
+
+    }
+
+
+
     public static void main(String[] args) {
 
         MusicShop musicShop = new MusicShop(new Guitar("Trymbita", "Guitar"), new Piano("Baldwin", "Piano"), new Trumpet("Goldens", "Trumpet"));
@@ -36,4 +44,7 @@ public class MusicShop {
             System.out.println(m.getCurrentName());
         }
     }
+
+
+
 }
