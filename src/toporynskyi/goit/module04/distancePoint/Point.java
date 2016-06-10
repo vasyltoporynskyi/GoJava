@@ -7,6 +7,9 @@ public class Point {
 
     public static void main (String[] args) {
 
+
+
+
         Point pointA = new Point(-14, 20);
         Point pointB = new Point(8, 12);
 

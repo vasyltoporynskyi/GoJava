@@ -1,8 +1,6 @@
 package toporynskyi.goit.module05.arraySort;
 
 import java.util.Scanner;
-import java.io.IOException;
-
 import java.util.Random;
 
 /**
@@ -40,14 +38,16 @@ public class BubbleSortArray {
 
         System.out.println("Enter Array length: ");
         final Scanner scanner = new Scanner(System.in);
-        final Integer userInput = Integer.valueOf(scanner.next());
+        final String userInput = String.valueOf(scanner.next());
 
-        int arrayLength = 0;
+        int arrayLength;
         try {
 
             arrayLength = Integer.parseInt(String.valueOf(userInput));
         } catch (NumberFormatException ex) {
-            System.out.print(" Error! ");
+            System.out.print("Error Value! \n" + "Enter Integer Value: \n");
+            String userInput2 = String.valueOf(scanner.next());
+            arrayLength = Integer.parseInt(String.valueOf(userInput2));
         }
 
         int[] array = new int[arrayLength];

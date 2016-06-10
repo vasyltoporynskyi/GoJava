@@ -1,9 +1,8 @@
 package toporynskyi.goit.module05.maxminArray;
 
-import toporynskyi.goit.module06.taskExceptions.NegativeElementException;
-
 import java.util.Random;
 import java.util.Scanner;
+
 
 /**
  * Created by grant on 6/6/16.
@@ -35,15 +34,19 @@ public class FindMaxMin {
 
         System.out.println("Enter Array length: ");
         final Scanner scanner = new Scanner(System.in);
-        final Integer userInput = Integer.valueOf(scanner.next());
+        final String userInput = String.valueOf(scanner.next());
 
-        int arrayLength = 0;
+        int arrayLength;
         try {
 
             arrayLength = Integer.parseInt(String.valueOf(userInput));
         } catch (NumberFormatException ex) {
-            System.out.print(" Error! ");
+            System.out.print("Error Value! \n" + "Enter Integer Value: \n");
+            String userInput2 = String.valueOf(scanner.next());
+            arrayLength = Integer.parseInt(String.valueOf(userInput2));
+
         }
+
 
         int[] array = new int[arrayLength];
         Random randomAdd = new Random();

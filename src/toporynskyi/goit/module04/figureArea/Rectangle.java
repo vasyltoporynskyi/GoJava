@@ -1,6 +1,5 @@
 package toporynskyi.goit.module04.figureArea;
 
-import java.util.IllegalFormatException;
 
 /**
  * Created by grant on 6/3/16.
@@ -17,12 +16,12 @@ public class Rectangle extends Figure {
 
 
     @Override
-    public double figureArea() throws Exception{
+    public double figureArea() {
         return sideA * sideB;
     }
 
     @Override
-    public void showResult() throws Exception {
+    public void showResult() {
         System.out.println("Rectangle Area = " + figureArea() + " сm");
     }
 
