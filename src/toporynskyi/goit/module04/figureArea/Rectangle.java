@@ -18,13 +18,6 @@ public class Rectangle extends Figure {
 
     @Override
     public double figureArea() throws Exception{
-        try {
-            if (sideA <= 0 || sideB <=0) {
-                throw new Exception();
-            }
-        } catch (IllegalFormatException e) {
-            e.getCause();
-        }
         return sideA * sideB;
     }
 
