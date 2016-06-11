@@ -28,7 +28,7 @@ public class MusicStore {
 
                 throw new NegativeValueException("Error!");
             }catch (NegativeValueException e){
-                System.out.println(" Error! No enough music instruments in Store!");
+                System.out.println("\n +++++++ Error! No enough music instruments in Store! ++++++++");
             }
         } else {
             instrumentsInStore.put(product, instrumentCountLeftInStore);
