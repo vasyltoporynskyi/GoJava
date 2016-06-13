@@ -9,9 +9,10 @@ import java.util.*;
  */
 public class MusicStore {
     private int orderInstrumentCount = 0;
+    private int storeInstrumentCount;
 
     Map<String, Integer> instrumentsInStore = new HashMap<>();
-    Map<String, Integer> instrumentsInOrder = new HashMap<>();
+
 
     public MusicStore(int guitarCountInStore, int pianoCountInStore, int trumpetCountInStore) {
         instrumentsInStore.put(MusicInstrument.GUITARS, guitarCountInStore);
@@ -20,13 +21,15 @@ public class MusicStore {
     }
 
 
+
     public void updateCount(String product) throws NegativeValueException {
 
-        int currInstrumentCountInStore = instrumentsInStore.get(product);
-        int currInstrumentCountForOrder = currInstrumentCountInStore;
-        int instrumentCountLeftInStore = currInstrumentCountForOrder - orderInstrumentCount;
 
-        if (currInstrumentCountForOrder < orderInstrumentCount) {
+        int currInstrumentCountInStore = instrumentsInStore.get(product);
+        int instrumentCountLeftInStore = currInstrumentCountInStore - orderInstrumentCount;
+        storeInstrumentCount = instrumentCountLeftInStore;
+
+        if (currInstrumentCountInStore < orderInstrumentCount) {
             throw new NegativeValueException("Error! There are no such number of instruments in Store! ");
         } else if(orderInstrumentCount == 0) {
             throw new NegativeValueException("Error! Order can`t be generated with zero number of instruments! ");
@@ -34,6 +37,7 @@ public class MusicStore {
             instrumentsInStore.put(product, instrumentCountLeftInStore);
         }
     }
+
 
     public List<MusicInstrument> prepareInstruments(Map<String, Integer> order) throws NegativeValueException {
 
@@ -73,5 +77,16 @@ public class MusicStore {
             }
         }
         return output;
+    }
+
+
+    public int getStoreGuitarCount() {
+        return storeInstrumentCount;
+    }
+    public int getStorePianosCount() {
+        return storeInstrumentCount;
+    }
+    public int getStoreTrumpetsCount() {
+        return storeInstrumentCount;
     }
 }
