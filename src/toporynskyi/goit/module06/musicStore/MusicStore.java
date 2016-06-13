@@ -11,6 +11,7 @@ public class MusicStore {
     private int orderInstrumentCount = 0;
 
     Map<String, Integer> instrumentsInStore = new HashMap<>();
+    Map<String, Integer> instrumentsInOrder = new HashMap<>();
 
     public MusicStore(int guitarCountInStore, int pianoCountInStore, int trumpetCountInStore) {
         instrumentsInStore.put(MusicInstrument.GUITARS, guitarCountInStore);
@@ -22,9 +23,10 @@ public class MusicStore {
     public void updateCount(String product) throws NegativeValueException {
 
         int currInstrumentCountInStore = instrumentsInStore.get(product);
-        int instrumentCountLeftInStore = currInstrumentCountInStore - orderInstrumentCount;
+        int currInstrumentCountForOrder = currInstrumentCountInStore;
+        int instrumentCountLeftInStore = currInstrumentCountForOrder - orderInstrumentCount;
 
-        if (currInstrumentCountInStore < orderInstrumentCount) {
+        if (currInstrumentCountForOrder < orderInstrumentCount) {
             throw new NegativeValueException("Error! There are no such number of instruments in Store! ");
         } else if(orderInstrumentCount == 0) {
             throw new NegativeValueException("Error! Order can`t be generated with zero number of instruments! ");
