@@ -5,7 +5,7 @@ package toporynskyi.goit.module06.musicStore;
  */
 public class Pianos extends MusicInstrument {
 
-    public Pianos(String currentName, String currentType) {
-        super(currentName, currentType);
+    public Pianos() {
+        super();
     }
 }

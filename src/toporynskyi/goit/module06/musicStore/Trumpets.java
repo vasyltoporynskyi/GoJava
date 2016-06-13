@@ -5,7 +5,7 @@ package toporynskyi.goit.module06.musicStore;
  */
 public class Trumpets extends MusicInstrument{
 
-    public Trumpets(String currentName, String currentType) {
-        super(currentName, currentType);
+    public Trumpets() {
+        super();
     }
 }

@@ -8,8 +8,8 @@ import java.util.*;
  * Created by grant on 5/31/16.
  */
 public class MusicStore {
-
     private int orderInstrumentCount = 0;
+
     Map<String, Integer> instrumentsInStore = new HashMap<>();
 
     public MusicStore(int guitarCountInStore, int pianoCountInStore, int trumpetCountInStore) {
@@ -18,27 +18,24 @@ public class MusicStore {
         instrumentsInStore.put(MusicInstrument.TRUMPETS, trumpetCountInStore);
     }
 
+
     public void updateCount(String product) throws NegativeValueException {
 
         int currInstrumentCountInStore = instrumentsInStore.get(product);
         int instrumentCountLeftInStore = currInstrumentCountInStore - orderInstrumentCount;
 
         if (currInstrumentCountInStore < orderInstrumentCount) {
-            try {
-
-                throw new NegativeValueException("Error!");
-            }catch (NegativeValueException e){
-                System.out.println("\n +++++++ Error! No enough music instruments in Store! ++++++++");
-            }
-        } else {
+            throw new NegativeValueException("Error! There are no such number of instruments in Store! ");
+        } else if(orderInstrumentCount == 0) {
+            throw new NegativeValueException("Error! Order can`t be generated with zero number of instruments! ");
+        } else{
             instrumentsInStore.put(product, instrumentCountLeftInStore);
         }
-
     }
 
     public List<MusicInstrument> prepareInstruments(Map<String, Integer> order) throws NegativeValueException {
-        List<MusicInstrument> output = new ArrayList<>();
 
+        List<MusicInstrument> output = new ArrayList<>();
         Set<String> instruments = order.keySet();
         Iterator<String> iterator = instruments.iterator();
 
@@ -49,7 +46,7 @@ public class MusicStore {
                     orderInstrumentCount = order.get(MusicInstrument.GUITARS);
                     updateCount(MusicInstrument.GUITARS);
                     for (int i = 0; i < orderInstrumentCount; i++) {
-                        output.add(new Guitars("Trymbita", "Guitars"));
+                        output.getClass();
                     }
                     iterator.remove();
                     break;
@@ -58,7 +55,7 @@ public class MusicStore {
                     orderInstrumentCount = order.get(MusicInstrument.PIANOS);
                     updateCount(MusicInstrument.PIANOS);
                     for (int i = 0; i < orderInstrumentCount; i++) {
-                        output.add(new Pianos("Baldwin", "Pianos"));
+                        output.getClass();
                     }
                     iterator.remove();
                     break;
@@ -67,7 +64,7 @@ public class MusicStore {
                     orderInstrumentCount = order.get(MusicInstrument.TRUMPETS);
                     updateCount(MusicInstrument.TRUMPETS);
                     for (int i = 0; i < orderInstrumentCount; i++) {
-                        output.add(new Trumpets("Golden", "Trumpets"));
+                        output.getClass();
                     }
                     iterator.remove();
                     break;

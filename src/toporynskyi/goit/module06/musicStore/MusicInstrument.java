@@ -14,9 +14,7 @@ public class MusicInstrument {
     protected String currentType;
 
 
-    public MusicInstrument(String currentName, String currentType) {
-        this.currentName = currentName;
-        this.currentType = currentType;
+    public MusicInstrument() {
     }
 
 
