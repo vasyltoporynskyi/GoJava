@@ -37,12 +37,13 @@ public class StoreMain {
 
         System.out.println("\nFirst order: (" + oderOneGuitars + " Guitars, " + oderOneTrumpets + " Trumpets)");
 
-        if (oderOneGuitars <= 7 || oderOneTrumpets <=2 ){
+        if (oderOneGuitars > 7 || oderOneTrumpets > 2 ){
+            System.out.println("Error! There are no such number of instruments in Store! ");
+
+        }else {
             order.put(MusicInstrument.TRUMPETS, userInputOrderOneTrumpets);
             order.put(MusicInstrument.GUITARS, userInputOrderOneGuitars);
             musicStore.prepareInstruments(order);
-        }else {
-            System.out.println("Error! There are no such number of instruments in Store! ");
         }
 
         System.out.println("\nMusic Instruments left in Store after first order: " + "\n" + musicStore.instrumentsInStore + "\n");
@@ -58,11 +59,12 @@ public class StoreMain {
         System.out.println("\nSecond order: (" + oderTwoPianos + " Piano)");
 
 
-        if (oderTwoPianos <= 1){
+        if (oderTwoPianos > 1){
+            System.out.println("Error! There are no such number of instruments in Store! ");
+
+        }else {
             order.put(MusicInstrument.PIANOS, oderTwoPianos);
             musicStore.prepareInstruments(order);
-        }else {
-            System.out.println("Error! There are no such number of instruments in Store! ");
         }
 
         System.out.println("\nMusic Instruments left in Store after second order: " + "\n" + musicStore.instrumentsInStore + "\n");
@@ -85,15 +87,13 @@ public class StoreMain {
         int oderThreeGuitars = userInputOrderThirdGuitars;
         int oderThreeTrumpets = userInputOrderThirdTrumpets;
 
-        if (oderThreePianos <= 1 | oderThreeGuitars <= 9 | oderThreeTrumpets <= 5){
-
-                order.put(MusicInstrument.PIANOS, oderThreePianos);
-                order.put(MusicInstrument.GUITARS, oderThreeGuitars);
-                order.put(MusicInstrument.TRUMPETS, oderThreeTrumpets);
-                  musicStore.prepareInstruments(order);
-        }else {
+        if (oderThreePianos < 1 || oderThreeGuitars < 9 || oderThreeTrumpets < 5){
             System.out.println("Error! There are no such number of instruments in Store! ");
-
+        }else {
+            order.put(MusicInstrument.PIANOS, oderThreePianos);
+            order.put(MusicInstrument.GUITARS, oderThreeGuitars);
+            order.put(MusicInstrument.TRUMPETS, oderThreeTrumpets);
+            musicStore.prepareInstruments(order);
         }
 
         System.out.println("\nThird order: (" + oderTwoPianos + " Piano, " + oderThreeGuitars + " Guitars, " + oderThreeTrumpets + " Trumpets" + ")");
