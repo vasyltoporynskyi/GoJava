@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class MusicStore {
     private int orderInstrumentCount = 0;
-    private int storeInstrumentCount;
+
 
     Map<String, Integer> instrumentsInStore = new HashMap<>();
 
@@ -27,7 +27,7 @@ public class MusicStore {
 
         int currInstrumentCountInStore = instrumentsInStore.get(product);
         int instrumentCountLeftInStore = currInstrumentCountInStore - orderInstrumentCount;
-        storeInstrumentCount = instrumentCountLeftInStore;
+
 
         if (currInstrumentCountInStore < orderInstrumentCount) {
             throw new NegativeValueException("Error! There are no such number of instruments in Store! ");
@@ -81,12 +81,12 @@ public class MusicStore {
 
 
     public int getStoreGuitarCount() {
-        return storeInstrumentCount;
+        return orderInstrumentCount;
     }
     public int getStorePianosCount() {
-        return storeInstrumentCount;
+        return orderInstrumentCount;
     }
     public int getStoreTrumpetsCount() {
-        return storeInstrumentCount;
+        return orderInstrumentCount;
     }
 }
