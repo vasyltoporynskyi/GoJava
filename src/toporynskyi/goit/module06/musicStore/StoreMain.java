@@ -10,11 +10,13 @@ import java.util.*;
 public class StoreMain {
     public static void main(String[] args) throws NegativeValueException {
 
+        // anit-pattern "Hard code" внесение данных о наличее товара должно осуществляться отдельным методом, а не прописываться в коде.
         MusicStore musicStore = new MusicStore(16, 2, 7);
 
         Map<String, Integer> order = new HashMap<>();
 
-
+        // anit-pattern "Hard code" Вывод информации для пользователя. Необходимо вынести в отдельный метод/класс.
+        // anit-pattern "Copy/Paste" Дублирование механизма вывода информации при каждой операции.
         System.out.println("You have in Store:  \n" + musicStore.instrumentsInStore);
 
 
@@ -39,6 +41,7 @@ public class StoreMain {
 
         if (oderOneGuitars > 7 || oderOneTrumpets > 2 ){
             System.out.println("Error! There are no such number of instruments in Store! ");
+
 
         }else {
             order.put(MusicInstrument.TRUMPETS, userInputOrderOneTrumpets);

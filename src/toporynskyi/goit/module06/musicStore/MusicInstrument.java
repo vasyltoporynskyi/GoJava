@@ -13,7 +13,9 @@ public class MusicInstrument {
     protected String currentName;
     protected String currentType;
 
-
+// anit-pattern "Boat anchor" не используемые переменные в класе.
+// Необходимо добавить в конструктор суперкласса "currentName" и "currentType".
+// Наследовать их в данном классе, а так же использовать в для определения названия и типа инструмента.
     public MusicInstrument() {
     }
 
