@@ -52,6 +52,7 @@ public class FindMaxMin {
         Random randomAdd = new Random();
 
         for (int i = 0; i < array.length; i++) {
+            // anit-patterns "Magic number", "Hard code". Условие длены массива не должно задаваться коде.
             array[i] = randomAdd.nextInt(100);
             System.out.print(array[i] + "  ");
         }
