@@ -8,12 +8,15 @@ import java.util.*;
  * Created by grant on 5/31/16.
  */
 public class MusicStore {
-    private int orderInstrumentCount = 0;
 
+
+    private int orderInstrumentCount = 0;
+    // anit-pattern "Boat anchor", "storeInstrumentCount" не используется.
+    private int storeInstrumentCount;
 
     Map<String, Integer> instrumentsInStore = new HashMap<>();
 
-
+    // anit-pattern "Hard code", добавление м магазин должно осуществляться отдельным методом.
     public MusicStore(int guitarCountInStore, int pianoCountInStore, int trumpetCountInStore) {
         instrumentsInStore.put(MusicInstrument.GUITARS, guitarCountInStore);
         instrumentsInStore.put(MusicInstrument.PIANOS, pianoCountInStore);
@@ -27,7 +30,7 @@ public class MusicStore {
 
         int currInstrumentCountInStore = instrumentsInStore.get(product);
         int instrumentCountLeftInStore = currInstrumentCountInStore - orderInstrumentCount;
-
+        storeInstrumentCount = instrumentCountLeftInStore;
 
         if (currInstrumentCountInStore < orderInstrumentCount) {
             throw new NegativeValueException("Error! There are no such number of instruments in Store! ");
@@ -37,6 +40,9 @@ public class MusicStore {
             instrumentsInStore.put(product, instrumentCountLeftInStore);
         }
     }
+
+
+  //anit-pattern, необходимо добавить массив List<> для формирования списка заказов, и проверить его валидность (с остатком на в магазине) прежде чем отгружать товар.
 
 
     public List<MusicInstrument> prepareInstruments(Map<String, Integer> order) throws NegativeValueException {
@@ -52,6 +58,7 @@ public class MusicStore {
                     orderInstrumentCount = order.get(MusicInstrument.GUITARS);
                     updateCount(MusicInstrument.GUITARS);
                     for (int i = 0; i < orderInstrumentCount; i++) {
+                        //anit-pattern, возвращает змыкание класса.
                         output.getClass();
                     }
                     iterator.remove();
@@ -61,6 +68,7 @@ public class MusicStore {
                     orderInstrumentCount = order.get(MusicInstrument.PIANOS);
                     updateCount(MusicInstrument.PIANOS);
                     for (int i = 0; i < orderInstrumentCount; i++) {
+                        //anit-pattern, возвращает змыкание класса.
                         output.getClass();
                     }
                     iterator.remove();
@@ -70,6 +78,7 @@ public class MusicStore {
                     orderInstrumentCount = order.get(MusicInstrument.TRUMPETS);
                     updateCount(MusicInstrument.TRUMPETS);
                     for (int i = 0; i < orderInstrumentCount; i++) {
+                        //anit-pattern, возвращает змыкание класса.
                         output.getClass();
                     }
                     iterator.remove();
@@ -79,14 +88,15 @@ public class MusicStore {
         return output;
     }
 
-
+    // anit-pattern "Boat anchor" не используемые методы.
+    // Необходимо переписать код так, чтоб был один метод "getStoreInstrumentCount", который будет возвращать запрашиваемый остаток в магазине.
     public int getStoreGuitarCount() {
-        return orderInstrumentCount;
+        return storeInstrumentCount;
     }
     public int getStorePianosCount() {
-        return orderInstrumentCount;
+        return storeInstrumentCount;
     }
     public int getStoreTrumpetsCount() {
-        return orderInstrumentCount;
+        return storeInstrumentCount;
     }
 }
