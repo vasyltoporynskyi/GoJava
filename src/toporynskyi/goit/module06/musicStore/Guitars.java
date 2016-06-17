@@ -6,6 +6,7 @@ package toporynskyi.goit.module06.musicStore;
 // anit-pattern "Boat anchor" не используемый класс.
 // Необходимо добавить в конструктор суперкласса "currentName" и "currentType".
 // Наследовать их в данном классе, а так же использовать в для определения названия и типа инструмента.
+//Yaroslav: ну да наверное
 public class Guitars extends MusicInstrument {
 
     public Guitars() {

@@ -12,6 +12,7 @@ public abstract class File {
 
 
     // anit-pattern "Boat anchor" не используемый конструктор.
+    //Yaroslav: Ну впринципе да...
     public File(String currentName, String currentType, int currentSize) {
         this.currentName = currentName;
         this.currentType = currentType;

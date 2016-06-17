@@ -10,6 +10,12 @@ import java.util.*;
 public class StoreMain {
     public static void main(String[] args) throws NegativeValueException {
 
+        //Yaroslav: ну впринципе если ты хочешь сделать нормальный command line interface то конечно, ето все не годится. (н у и
+        // ты тут правильно понаписывал про "Hard code" "Copy/Paste")
+        //Нужен отдельный класс со своими методами...может и не один. Но в заданиях ето все не требовалось...так что такое...
+        //  у тебя сдесь антипаттер - спаггети код. один длинный метод...да, дубликат есть и тп...
+
+
         // anit-pattern "Hard code" внесение данных о наличее товара должно осуществляться отдельным методом, а не прописываться в коде.
         // anit-pattern "Magic number".
         MusicStore musicStore = new MusicStore(16, 2, 7);

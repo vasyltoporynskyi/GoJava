@@ -10,6 +10,7 @@ public class Point {
 
 
         // anit-patterns "Magic number", "Hard code". Значени точек не должно задаваться коде. Необходимо вывести в отдельный метод.
+        //Yaroslav: Нет. Ето ж ты просто "тестируешь" свой класс. Ети точки не влияют на нашу программу и здесь все очевидно.
         Point pointA = new Point(-14, 20);
         Point pointB = new Point(8, 12);
 

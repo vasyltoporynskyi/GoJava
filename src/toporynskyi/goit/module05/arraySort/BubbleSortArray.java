@@ -58,6 +58,8 @@ public class BubbleSortArray {
 
         for (int i = 0; i < array.length; i++) {
             // anit-patterns "Magic number", "Hard code". Условие длены массива не должно задаваться коде.
+            //Yaroslav: поскольку ето уже каое-то подобие на взаимодействие с юзером, то сдесь впринципе могу с тобой согласится
+            //что ето "Hard code".
             array[i] = randomAdd.nextInt(100);
             System.out.print(array[i] + "  ");
         }
