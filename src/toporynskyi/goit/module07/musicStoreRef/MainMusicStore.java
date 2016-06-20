@@ -8,7 +8,7 @@ import java.util.*;
  * Created by grant on 6/15/16.
  */
 public class MainMusicStore {
-    public static void main(String[] args) throws InvalidAttributeValueException, SizeLimitExceededException, WrongInstrumentException {
+    public static void main(String[] args) throws InvalidAttributeValueException, SizeLimitExceededException, InstrumentException {
 
         MusicStore musicStore = new MusicStore();
         List<MusicInstrument> instrumentsInStore = new ArrayList<>();
@@ -27,7 +27,7 @@ public class MainMusicStore {
         System.out.println("Order 1: " + order1);
         try {
             musicStore.prepareInstruments(order1);
-        } catch (WrongInstrumentException e) {
+        } catch (InstrumentException e) {
             System.out.println(e.getMessage());
         } catch (InvalidAttributeValueException e) {
             System.out.println(e.getMessage());

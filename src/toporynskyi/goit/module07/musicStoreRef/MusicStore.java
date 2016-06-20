@@ -11,7 +11,7 @@ class MusicStore {
 
     private List<MusicInstrument> musicInstrumentList;
 
-    public List<MusicInstrument> prepareInstruments(Map<String, Integer> order) throws WrongInstrumentException, InvalidAttributeValueException, SizeLimitExceededException {
+    public List<MusicInstrument> prepareInstruments(Map<String, Integer> order) throws InstrumentException, InvalidAttributeValueException, SizeLimitExceededException {
         if (order == null) return null;
         orderListCheck(order);
 
@@ -33,13 +33,13 @@ class MusicStore {
         return result;
     }
 
-    private void orderListCheck(Map<String, Integer> order) throws WrongInstrumentException, InvalidAttributeValueException, SizeLimitExceededException {
+    private void orderListCheck(Map<String, Integer> order) throws InstrumentException, InvalidAttributeValueException, SizeLimitExceededException {
         Set<String> allowedInstruments = new HashSet<>();
         Collections.addAll(allowedInstruments, "guitar", "piano", "trumpet");
 
         for (Map.Entry entry : order.entrySet()) {
             if (!allowedInstruments.contains(entry.getKey())) {
-                throw new WrongInstrumentException(entry.getKey().toString());
+                throw new InstrumentException(entry.getKey().toString());
             }
             if (((Integer) entry.getValue()) <= 0) {
                 throw new InvalidAttributeValueException("Wrong quantity in order. Instrument [" +
