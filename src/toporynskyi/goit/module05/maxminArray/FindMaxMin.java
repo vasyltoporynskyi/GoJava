@@ -32,6 +32,7 @@ public class FindMaxMin {
 
     public static void main(String[] args) {
 
+
         System.out.println("Enter Array length: ");
         final Scanner scanner = new Scanner(System.in);
         final String userInput = String.valueOf(scanner.next());
@@ -50,10 +51,11 @@ public class FindMaxMin {
 
         int[] array = new int[arrayLength];
         Random randomAdd = new Random();
+        System.out.println("Enter Value: ");
+        final String userInputValue = String.valueOf(scanner.next());
 
         for (int i = 0; i < array.length; i++) {
-            // anit-patterns "Magic number", "Hard code". Условие длены массива не должно задаваться коде.
-            array[i] = randomAdd.nextInt(100);
+            array[i] = randomAdd.nextInt(Integer.parseInt(userInputValue));
             System.out.print(array[i] + "  ");
         }
                 System.out.println("\n");

@@ -7,13 +7,9 @@ public class Point {
 
     public static void main (String[] args) {
 
-
-
-        // anit-patterns "Magic number", "Hard code". Значени точек не должно задаваться коде. Необходимо вывести в отдельный метод.
         Point pointA = new Point(-14, 20);
         Point pointB = new Point(8, 12);
-
-        System.out.println("Point from point A to point B = " + pointA.distance(pointB));
+        System.out.println("Distance from point A to point B = " + pointA.distance(pointB));
     }
 
     double x, y;

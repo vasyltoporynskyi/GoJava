@@ -6,8 +6,8 @@ package toporynskyi.goit.module04.figureArea;
  */
 public class Circle extends Figure {
 
-    // anit-patterns "Magic number", "Hard code". Значени PI не является точным, и константой. Необходимо PI сделать константой с коректным значением PI.
-    protected final double Pi = 3.14;
+
+    protected final double Pi = Math.PI;
     protected double radius;
 
     public Circle (double radius){
