@@ -17,6 +17,8 @@ public class MusicStore {
     Map<String, Integer> instrumentsInStore = new HashMap<>();
 
     // anit-pattern "Hard code", добавление м магазин должно осуществляться отдельным методом.
+    //Yaroslav: здесь нету хардкода скорее... Иногда вполне даже нужно инициализировать поля через конструктор.
+    //тут возможно ето просто было не лучшее решение.
     public MusicStore(int guitarCountInStore, int pianoCountInStore, int trumpetCountInStore) {
         instrumentsInStore.put(MusicInstrument.GUITARS, guitarCountInStore);
         instrumentsInStore.put(MusicInstrument.PIANOS, pianoCountInStore);
@@ -59,6 +61,7 @@ public class MusicStore {
                     updateCount(MusicInstrument.GUITARS);
                     for (int i = 0; i < orderInstrumentCount; i++) {
                         //anit-pattern, возвращает змыкание класса.
+                        //Yaroslav: какое нафиг замыкание)) Просто бесполезный код...ето уже обсуждали) Boat anchor в квадрате
                         output.getClass();
                     }
                     iterator.remove();
@@ -90,6 +93,7 @@ public class MusicStore {
 
     // anit-pattern "Boat anchor" не используемые методы.
     // Необходимо переписать код так, чтоб был один метод "getStoreInstrumentCount", который будет возвращать запрашиваемый остаток в магазине.
+    //Yaroslav: ok
     public int getStoreGuitarCount() {
         return storeInstrumentCount;
     }
