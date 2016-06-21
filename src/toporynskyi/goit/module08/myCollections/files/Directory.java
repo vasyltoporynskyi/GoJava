@@ -5,8 +5,12 @@ import java.util.List;
 /**
  * Created by grant on 6/18/16.
  */
-public class Directory {
+public class Directory extends File{
     private List<File> files;
+
+    public Directory(String name, String address, int size) {
+        super(name, address, size);
+    }
 
     public List<File> getFiles() {
         return files;
@@ -16,9 +20,5 @@ public class Directory {
         this.files = files;
     }
 
-    public void printDirContent() {
-        this.files
-                .stream()
-                .forEach(e -> System.out.println(e.getName() + "\t" + e.getAddress() + "\t" + e.getSize()));
-    }
+
 }

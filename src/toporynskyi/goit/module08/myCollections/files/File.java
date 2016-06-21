@@ -3,7 +3,7 @@ package toporynskyi.goit.module08.myCollections.files;
 /**
  * Created by grant on 6/18/16.
  */
-public class File {
+public abstract class File {
     protected String name;
     protected String address;
     protected int size;
@@ -28,13 +28,5 @@ public class File {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
     }
 }

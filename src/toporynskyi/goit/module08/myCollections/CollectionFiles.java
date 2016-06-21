@@ -7,19 +7,31 @@ import java.util.*;
 /**
  * Created by grant on 6/18/16.
  */
-public class CollectionFiles {
+public class CollectionFiles implements Comparator<File> {
+
+    @Override
+    public int compare(File o1, File o2) {
+        String fileOne = o1.getName();
+        String fileTwo = o2.getName();
+
+        return fileOne.compareTo(fileTwo);
+    }
 
     public static void main(String[] args) {
 
-        Directory dir = new Directory();
-        List<File> fileList = new ArrayList<>();
-        fileList.add(new MusicFile("Imagine", "dir", 10, "John Lennon", 3));
-        fileList.add(new MusicFile("Smoke on the water", "dir", 15, "Deep purpule", 3));
-        fileList.add(new PictureFile("Wallpaper1", "dir", 20, "jpg"));
-        fileList.add(new TextFile("trampampam", "dir", 7, "txt", "English"));
+        TreeSet<File> filesTreeSort = new TreeSet<>(new CollectionFiles());
+        filesTreeSort.add(new MusicFile("Imagine", "file", 10));
+        filesTreeSort.add(new MusicFile("Smoke on the water", "file", 15));
+        filesTreeSort.add(new PictureFile("Wallpaper", "file", 2));
+        filesTreeSort.add(new PictureFile("Photo Home", "file", 22));
+        filesTreeSort.add(new TextFile("DocFile", "file", 7));
+        filesTreeSort.add(new Directory("Folder", "folder", 1));
 
-        dir.setFiles(fileList);
 
-        dir.printDirContent();
+        for (File e : filesTreeSort) {
+            System.out.println(e.getName() + "\t" + e.getAddress() + "\t" + e.getSize());
+
+        }
+
     }
 }
