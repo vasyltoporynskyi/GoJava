@@ -6,4 +6,9 @@ package toporynskyi.goit.module07.musicStoreRef;
 public class Trumpet extends MusicInstrument {
     public Trumpet() {
     }
+
+    @Override
+    public String toString() {
+        return "trumpet";
+    }
 }

@@ -7,4 +7,9 @@ public class Piano extends MusicInstrument {
 
     public Piano() {
     }
+
+    @Override
+    public String toString() {
+        return "piano";
+    }
 }

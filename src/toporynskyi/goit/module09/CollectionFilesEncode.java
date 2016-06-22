@@ -8,7 +8,7 @@ import java.util.TreeSet;
 /**
  * Created by grant on 6/22/16.
  */
-public class CollectionFilesEncode  implements Comparator<File> {
+public class CollectionFilesEncode implements Comparator<File> {
 
     @Override
     public int compare(File o1, File o2) {
@@ -55,8 +55,6 @@ public class CollectionFilesEncode  implements Comparator<File> {
             System.out.println(e.getName() + "\t" + e.getAddress() + "\t" + e.getSize());
 
         }
-
-
 
 
     }

@@ -1,7 +1,5 @@
 package toporynskyi.goit.module07.musicStoreRef;
 
-import javax.management.InvalidAttributeValueException;
-import javax.naming.SizeLimitExceededException;
 import java.util.*;
 
 /**
@@ -11,7 +9,7 @@ class MusicStore {
 
     private List<MusicInstrument> musicInstrumentList;
 
-    public List<MusicInstrument> prepareInstruments(Map<String, Integer> order) throws InstrumentException, InvalidAttributeValueException, SizeLimitExceededException {
+    public List<MusicInstrument> prepareInstruments(Map<String, Integer> order) throws InstrumentException {
         if (order == null) return null;
         orderListCheck(order);
 
@@ -33,7 +31,7 @@ class MusicStore {
         return result;
     }
 
-    private void orderListCheck(Map<String, Integer> order) throws InstrumentException, InvalidAttributeValueException, SizeLimitExceededException {
+    private void orderListCheck(Map<String, Integer> order) throws InstrumentException {
         Set<String> allowedInstruments = new HashSet<>();
         Collections.addAll(allowedInstruments, "guitar", "piano", "trumpet");
 
@@ -42,11 +40,11 @@ class MusicStore {
                 throw new InstrumentException(entry.getKey().toString());
             }
             if (((Integer) entry.getValue()) <= 0) {
-                throw new InvalidAttributeValueException("Wrong quantity in order. Instrument [" +
+                throw new InstrumentException("Wrong quantity in order. Instrument [" +
                         entry.getKey() + "] has value [" + entry.getValue() + "], allowed '> 0'.");
             }
             if (((Integer) entry.getValue()) > getInstrumentQuantityInStore(entry.getKey().toString())) {
-                throw new SizeLimitExceededException("Not enough quantity of [" + entry.getKey() +
+                throw new InstrumentException("Not enough quantity of [" + entry.getKey() +
                         "]. In store [" + getInstrumentQuantityInStore(entry.getKey().toString()) +
                         "]. In order [" + entry.getValue() + "].");
             }
@@ -66,33 +64,26 @@ class MusicStore {
         Map<String, Integer> storeContains = new HashMap<>();
         for (MusicInstrument musicInstrument : musicInstrumentList) {
             if (storeContains.containsKey(musicInstrument.getType())) {
-                storeContains.put(musicInstrument.getType(), storeContains.get(musicInstrument.getType()) + 1);
+                storeContains.put(String.valueOf(musicInstrument.getType()), storeContains.get(musicInstrument.getType()) + 1);
             } else {
-                storeContains.put(musicInstrument.getType(), 1);
+                storeContains.put(String.valueOf(musicInstrument.getType()), 1);
             }
         }
         return storeContains.toString();
     }
 
-    public int inputQuantity(){
+    public int inputQuantity() {
         final Scanner scanner = new Scanner(System.in);
         System.out.println("please add quantity: ");
-        Integer userInputItem = Integer.valueOf(scanner.next());
-        Integer.parseInt(String.valueOf(userInputItem));
-        int inputItem = userInputItem;
-        return inputItem;
+        return Integer.valueOf(scanner.next());
     }
 
-    protected static List<MusicInstrument> createListInstrument(MusicInstrument instrument, int quantity) {
+    protected static List<MusicInstrument> createListInstrument(MusicInstrument instrument, int quantity) throws InstrumentException {
         List<MusicInstrument> musicInstrumentList = new ArrayList<>();
+
         for (int i = 0; i < quantity; i++) {
-            try {
-                musicInstrumentList.add(instrument.getClass().newInstance());
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+
+            musicInstrumentList.add(instrument);
         }
         return musicInstrumentList;
     }

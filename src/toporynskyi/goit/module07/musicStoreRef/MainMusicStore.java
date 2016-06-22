@@ -8,13 +8,13 @@ import java.util.*;
  * Created by grant on 6/15/16.
  */
 public class MainMusicStore {
-    public static void main(String[] args) throws InvalidAttributeValueException, SizeLimitExceededException, InstrumentException {
+    public static void main(String[] args) throws InstrumentException {
 
         MusicStore musicStore = new MusicStore();
         List<MusicInstrument> instrumentsInStore = new ArrayList<>();
-        instrumentsInStore.addAll(musicStore.createListInstrument(new Guitar(), 16));
-        instrumentsInStore.addAll(musicStore.createListInstrument(new Piano(), 2));
-        instrumentsInStore.addAll(musicStore.createListInstrument(new Trumpet(), 7));
+        instrumentsInStore.addAll(MusicStore.createListInstrument(new Guitar(), 16));
+        instrumentsInStore.addAll(MusicStore.createListInstrument(new Piano(), 2));
+        instrumentsInStore.addAll(MusicStore.createListInstrument(new Trumpet(), 7));
         musicStore.setMusicInstrumentList(instrumentsInStore);
         System.out.println("Instruments in Store:\t" + musicStore);
 
@@ -29,10 +29,6 @@ public class MainMusicStore {
             musicStore.prepareInstruments(order1);
         } catch (InstrumentException e) {
             System.out.println(e.getMessage());
-        } catch (InvalidAttributeValueException e) {
-            System.out.println(e.getMessage());
-        } catch (SizeLimitExceededException e) {
-            System.out.println(e.getMessage());
         }
         System.out.println("Instruments in Store after Order 1:\t" + musicStore);
 
@@ -42,7 +38,7 @@ public class MainMusicStore {
         System.out.println("Order 2: " + order2);
         try {
             musicStore.prepareInstruments(order2);
-        } catch (Exception e) {
+        } catch (InstrumentException e) {
             System.out.println(e.getMessage());
         }
         System.out.println("Instruments in Store after Order 2:\t" + musicStore);
@@ -57,7 +53,7 @@ public class MainMusicStore {
         System.out.println("Order 3: " + order3);
         try {
             musicStore.prepareInstruments(order3);
-        } catch (Exception e) {
+        } catch (InstrumentException e) {
             System.out.println(e.getMessage());
             System.out.println("Instruments in Store after Order 2:\t" + musicStore);
 

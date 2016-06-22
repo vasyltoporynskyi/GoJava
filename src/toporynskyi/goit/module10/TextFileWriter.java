@@ -7,13 +7,13 @@ import java.io.*;
  */
 public class TextFileWriter {
 
-    public void writing() throws IOException {
+    private void writing() throws IOException {
         try {
-            BufferedReader breader = new BufferedReader (new InputStreamReader(System.in));
+            BufferedReader breader = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bwriter = new BufferedWriter(new FileWriter("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"));
             String text;
 
-            while(!(text = breader.readLine()).equals("Exit")){
+            while (!(text = breader.readLine()).equals("Exit")) {
                 String enText = TextEncryption.encode(text);
                 bwriter.write(enText + "\n");
                 bwriter.flush();
@@ -23,7 +23,7 @@ public class TextFileWriter {
         }
     }
 
-    public void reading() throws IOException {
+    private void reading() throws IOException {
 
         try (BufferedReader fileReader = new BufferedReader(new FileReader("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"))) {
             String text;
@@ -38,8 +38,7 @@ public class TextFileWriter {
     }
 
 
-
-    public static void main(String[]args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
         TextFileWriter write = new TextFileWriter();
         write.writing();

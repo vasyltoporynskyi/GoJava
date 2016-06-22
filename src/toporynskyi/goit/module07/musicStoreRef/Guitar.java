@@ -7,4 +7,9 @@ public class Guitar extends MusicInstrument {
 
     public Guitar() {
     }
+
+    @Override
+    public String toString() {
+        return "guitar";
+    }
 }
