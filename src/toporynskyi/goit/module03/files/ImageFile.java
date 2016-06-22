@@ -14,6 +14,6 @@ public class ImageFile extends File {
 
     @Override
     public String getCurrentName() {
-        return currentName + "." + currentImageFormat + " (Type: " + currentType + ", Zise: " + currentSize + "KB)";
+        return currentName + "." + currentImageFormat + " (MusicInstrumentType: " + currentType + ", Zise: " + currentSize + "KB)";
     }
 }

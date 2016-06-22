@@ -15,7 +15,7 @@ public class AudioFile extends File {
 
     @Override
     public String getCurrentName() {
-        return currentName + "." + currentAudioFormat + " (Type: " + currentType + ", Zise: " + currentSize + "MB)";
+        return currentName + "." + currentAudioFormat + " (MusicInstrumentType: " + currentType + ", Zise: " + currentSize + "MB)";
     }
 
 

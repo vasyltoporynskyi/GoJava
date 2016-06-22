@@ -15,7 +15,7 @@ public class TextFile extends File {
 
     @Override
     public String getCurrentName() {
-        return currentName + "." + currentTextFormat + " (Type: " + currentType + ", Zise: " + currentSize + "KB)";
+        return currentName + "." + currentTextFormat + " (MusicInstrumentType: " + currentType + ", Zise: " + currentSize + "KB)";
     }
 
 }
