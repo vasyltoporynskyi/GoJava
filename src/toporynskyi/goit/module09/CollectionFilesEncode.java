@@ -1,7 +1,9 @@
 package toporynskyi.goit.module09;
 
 import toporynskyi.goit.module08.myCollections.files.*;
+import toporynskyi.goit.module10.*;
 
+import java.io.IOException;
 import java.util.Comparator;
 import java.util.TreeSet;
 
@@ -18,7 +20,7 @@ public class CollectionFilesEncode implements Comparator<File> {
         return fileOne.compareTo(fileTwo);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         TreeSet<File> filesTreeSort = new TreeSet<>(new CollectionFilesEncode());
 
@@ -31,31 +33,27 @@ public class CollectionFilesEncode implements Comparator<File> {
         filesTreeSort.add(picture);
         filesTreeSort.add(text);
         filesTreeSort.add(directory);
-
+/*
         FileEncryption.encode(imagine);
         FileEncryption.encode(picture);
         FileEncryption.encode(text);
         FileEncryption.encode(directory);
+*/
 
         System.out.println(" File after encoding: \n");
-
         for (File e : filesTreeSort) {
-            System.out.println(e.getName() + "\t" + e.getAddress() + "\t" + e.getSize());
+            String ttt = String.valueOf(e.getName());
+            String mmm = TextEncryption.encode(ttt);
+            System.out.println(mmm + "  " + e.getAddress() + "  " + e.getSize());
+
 
         }
 
-        FileEncryption.decode(imagine);
-        FileEncryption.decode(picture);
-        FileEncryption.decode(text);
-        FileEncryption.decode(directory);
-
-        System.out.println("\n Files after decoding: \n");
-
+        System.out.println(" File after decoding: \n");
         for (File e : filesTreeSort) {
-            System.out.println(e.getName() + "\t" + e.getAddress() + "\t" + e.getSize());
-
+            String eee = String.valueOf(e.getName());
+            String vvv = TextEncryption.decode(eee);
+            System.out.println(vvv + "  " + e.getAddress() + "  " + e.getSize());
         }
-
-
     }
 }
