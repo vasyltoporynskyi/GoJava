@@ -1,7 +1,6 @@
 package toporynskyi.goit.module09;
 
 import toporynskyi.goit.module08.myCollections.files.*;
-import toporynskyi.goit.module10.*;
 
 import java.io.IOException;
 import java.util.Comparator;
@@ -24,36 +23,26 @@ public class CollectionFilesEncode implements Comparator<File> {
 
         TreeSet<File> filesTreeSort = new TreeSet<>(new CollectionFilesEncode());
 
-        MusicFile imagine = new MusicFile("Imagine World without War ", "file", 10);
-        PictureFile picture = new PictureFile("Wallpaper of Beautiful nature ", "file", 2);
-        TextFile text = new TextFile("Azure Active Directory ", "file", 7);
-        Directory directory = new Directory("Regulations documents folder", "folder", 1);
-
-        filesTreeSort.add(imagine);
-        filesTreeSort.add(picture);
-        filesTreeSort.add(text);
-        filesTreeSort.add(directory);
-/*
-        FileEncryption.encode(imagine);
-        FileEncryption.encode(picture);
-        FileEncryption.encode(text);
-        FileEncryption.encode(directory);
-*/
+        filesTreeSort.add(new MusicFile("Imagine World without War ", "file", 10));
+        filesTreeSort.add(new PictureFile("Wallpaper of Beautiful nature ", "file", 2));
+        filesTreeSort.add(new TextFile("Azure Active Directory ", "file", 7));
+        filesTreeSort.add(new Directory("Regulations documents folder", "folder", 1));
 
         System.out.println(" File after encoding: \n");
         for (File e : filesTreeSort) {
-            String ttt = String.valueOf(e.getName());
-            String mmm = TextEncryption.encode(ttt);
-            System.out.println(mmm + "  " + e.getAddress() + "  " + e.getSize());
-
-
+            String newText = String.valueOf(e.getName());
+            String encodedText = TextEncryption.encode(newText);
+            e.setName(encodedText);
+            System.out.println(e.getName() + "  " + e.getAddress() + "  " + e.getSize());
         }
 
         System.out.println(" File after decoding: \n");
         for (File e : filesTreeSort) {
-            String eee = String.valueOf(e.getName());
-            String vvv = TextEncryption.decode(eee);
-            System.out.println(vvv + "  " + e.getAddress() + "  " + e.getSize());
+            String encodedText = String.valueOf(e.getName());
+            String decodedText = TextEncryption.decode(encodedText);
+            e.setName(decodedText);
+            System.out.println(e.getName() + "  " + e.getAddress() + "  " + e.getSize());
         }
+        System.out.println("\n");
     }
 }

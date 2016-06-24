@@ -1,5 +1,7 @@
 package toporynskyi.goit.module10;
 
+import toporynskyi.goit.module09.TextEncryption;
+
 import java.io.*;
 
 /**
@@ -23,7 +25,11 @@ public class TextFileWriter {
             System.err.println("Error writing to file TextIOFile.txt");
         }
 
+
     }
+
+    String s = " " + 10;
+
 
     private void reading() throws IOException {
 
