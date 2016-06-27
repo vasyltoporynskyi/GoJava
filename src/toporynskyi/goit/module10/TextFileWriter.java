@@ -9,12 +9,9 @@ import java.io.*;
  */
 public class TextFileWriter {
 
-    private void writing() throws IOException {
+    private BufferedReader writing(BufferedWriter bwriter, BufferedReader breader) {
+        String text;
         try {
-            BufferedReader breader = new BufferedReader(new InputStreamReader(System.in));
-            BufferedWriter bwriter = new BufferedWriter(new FileWriter("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"));
-            String text;
-
             while (!(text = breader.readLine()).equals("Exit")) {
                 String enText = TextEncryption.encode(text);
                 bwriter.write(enText + "\n");
@@ -24,18 +21,12 @@ public class TextFileWriter {
         } catch (IOException e) {
             System.err.println("Error writing to file TextIOFile.txt");
         }
-
-
+        return null;
     }
 
-    String s = " " + 10;
-
-
-    private void reading() throws IOException {
-
-        try (BufferedReader fileReader = new BufferedReader(new FileReader("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"))) {
-            String text;
-
+    private void reading(BufferedReader fileReader){
+        String text;
+        try{
             while ((text = fileReader.readLine()) != null) {
                 String deText = TextEncryption.decode(text);
                 System.out.print("\n" + deText);
@@ -46,13 +37,17 @@ public class TextFileWriter {
         }
     }
 
-
     public static void main(String[] args) throws IOException {
 
+        BufferedWriter bwriter = new BufferedWriter(new FileWriter("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"));
+        BufferedReader breader = new BufferedReader(new InputStreamReader(System.in));
+
         TextFileWriter write = new TextFileWriter();
-        write.writing();
+        write.writing(bwriter, breader);
+
+        BufferedReader fileReader = new BufferedReader(new FileReader("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"));
 
         TextFileWriter reader = new TextFileWriter();
-        reader.reading();
+        reader.reading(fileReader);
     }
 }
