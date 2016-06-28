@@ -9,45 +9,40 @@ import java.io.*;
  */
 public class TextFileWriter {
 
-    private BufferedReader writing(BufferedWriter bwriter, BufferedReader breader) {
+    private BufferedReader writing(BufferedWriter bwriter){
         String text;
-        try {
+        try (BufferedReader breader = new BufferedReader(new InputStreamReader(System.in))) {
             while (!(text = breader.readLine()).equals("Exit")) {
                 String enText = TextEncryption.encode(text);
                 bwriter.write(enText + "\n");
                 bwriter.flush();
             }
-            bwriter.close();
-        } catch (IOException e) {
-            System.err.println("Error writing to file TextIOFile.txt");
+        }catch (Exception e){
+            System.err.println("Error! Can`t write to file.");
         }
         return null;
     }
 
-    private void reading(BufferedReader fileReader){
+    private void reading(FileReader fileTarget){
         String text;
-        try{
+        try (BufferedReader fileReader = new BufferedReader(fileTarget)) {
             while ((text = fileReader.readLine()) != null) {
                 String deText = TextEncryption.decode(text);
                 System.out.print("\n" + deText);
             }
-            fileReader.close();
-        } catch (IOException e) {
-            System.err.format("IOException: %s%n", e);
+        } catch (Exception e){
+            System.err.println("Error! Can`t read from file.");
         }
     }
 
     public static void main(String[] args) throws IOException {
 
         BufferedWriter bwriter = new BufferedWriter(new FileWriter("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"));
-        BufferedReader breader = new BufferedReader(new InputStreamReader(System.in));
-
         TextFileWriter write = new TextFileWriter();
-        write.writing(bwriter, breader);
+        write.writing(bwriter);
 
-        BufferedReader fileReader = new BufferedReader(new FileReader("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"));
-
+        FileReader fileTarget  = new FileReader("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt");
         TextFileWriter reader = new TextFileWriter();
-        reader.reading(fileReader);
+        reader.reading(fileTarget);
     }
 }
