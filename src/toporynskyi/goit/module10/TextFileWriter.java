@@ -9,13 +9,13 @@ import java.io.*;
  */
 public class TextFileWriter {
 
-    private BufferedReader writing(BufferedWriter bwriter){
+    private BufferedReader writing(String sbwriter){
         String text;
-        try (BufferedReader breader = new BufferedReader(new InputStreamReader(System.in))) {
+        try (BufferedReader breader = new BufferedReader(new InputStreamReader(System.in));
+             BufferedWriter bwriter = new BufferedWriter(new FileWriter(sbwriter))) {
             while (!(text = breader.readLine()).equals("Exit")) {
                 String enText = TextEncryption.encode(text);
                 bwriter.write(enText + "\n");
-                bwriter.flush();
             }
         }catch (Exception e){
             System.err.println("Error! Can`t write to file.");
@@ -23,9 +23,10 @@ public class TextFileWriter {
         return null;
     }
 
-    private void reading(FileReader fileTarget){
+    private void reading(String sfileTarget){
         String text;
-        try (BufferedReader fileReader = new BufferedReader(fileTarget)) {
+        try (FileReader fileTarget  = new FileReader(sfileTarget);
+                BufferedReader fileReader = new BufferedReader(fileTarget)) {
             while ((text = fileReader.readLine()) != null) {
                 String deText = TextEncryption.decode(text);
                 System.out.print("\n" + deText);
@@ -37,12 +38,12 @@ public class TextFileWriter {
 
     public static void main(String[] args) throws IOException {
 
-        BufferedWriter bwriter = new BufferedWriter(new FileWriter("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt"));
+        String sbwriter = "../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt";
         TextFileWriter write = new TextFileWriter();
-        write.writing(bwriter);
+        write.writing(sbwriter);
 
-        FileReader fileTarget  = new FileReader("../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt");
+        String sfileTarget = "../GoJava/src/toporynskyi/goit/module10/TextIOFile.txt";
         TextFileWriter reader = new TextFileWriter();
-        reader.reading(fileTarget);
+        reader.reading(sfileTarget);
     }
 }
