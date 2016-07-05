@@ -9,7 +9,7 @@ import java.io.*;
  */
 public class TextFileWriter {
 
-    private BufferedReader writing(String sbwriter){
+    public BufferedReader writing(String sbwriter){
         String text;
         try (BufferedReader breader = new BufferedReader(new InputStreamReader(System.in));
              BufferedWriter bwriter = new BufferedWriter(new FileWriter(sbwriter))) {
@@ -23,7 +23,7 @@ public class TextFileWriter {
         return null;
     }
 
-    private void reading(String sfileTarget){
+    public void reading(String sfileTarget){
         String text;
         try (FileReader fileTarget  = new FileReader(sfileTarget);
                 BufferedReader fileReader = new BufferedReader(fileTarget)) {
