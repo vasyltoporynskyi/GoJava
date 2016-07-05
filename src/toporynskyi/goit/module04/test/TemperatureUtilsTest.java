@@ -1,6 +1,8 @@
 package toporynskyi.goit.module04.test;
 
+import org.junit.Assert;
 import org.junit.Test;
+import toporynskyi.goit.module04.tempConverter.TemperatureUtils;
 
 import static org.junit.Assert.*;
 
@@ -10,8 +12,14 @@ import static org.junit.Assert.*;
 public class TemperatureUtilsTest {
     @Test
     public void main() throws Exception {
+        double cTemp = (double) 30.0; // 30.0
+        double fTemp;
 
+        fTemp = cTemp * 9/5 + 32;
+        cTemp = ((fTemp - 32) * 5/9);
 
+        final double result = fTemp;
+        Assert.assertEquals(86.0, result, 0);
     }
 
 }

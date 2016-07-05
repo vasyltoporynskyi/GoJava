@@ -13,6 +13,6 @@ public class PointTest {
         Point pointB = new Point(8, 3);
 
         final double result = pointA.distance(pointB);
-        Assert.assertEquals(pointA.distance(pointB), result, 0.001);
+        Assert.assertEquals(pointA.distance(pointB), result, 0);
     }
 }
