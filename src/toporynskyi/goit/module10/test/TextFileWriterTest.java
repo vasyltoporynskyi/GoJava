@@ -1,6 +1,5 @@
 package toporynskyi.goit.module10.test;
 
-import toporynskyi.goit.module09.TextEncryption;
 import org.junit.*;
 import toporynskyi.goit.module10.TextFileWriter;
 

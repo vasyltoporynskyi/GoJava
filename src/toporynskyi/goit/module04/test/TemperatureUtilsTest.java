@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  * Created by grant on 7/1/16.
  */
 public class TemperatureUtilsTest {
-    @Test
+    @Test(timeout = 1000)
     public void main() throws Exception {
         double cTemp = 30.0;
         double fTemp;
