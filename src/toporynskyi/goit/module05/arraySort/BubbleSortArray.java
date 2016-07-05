@@ -57,7 +57,6 @@ public class BubbleSortArray {
         final String userInputValue = String.valueOf(scanner.next());
 
         for (int i = 0; i < array.length; i++) {
-            // anit-patterns "Magic number", "Hard code". Условие длены массива не должно задаваться коде.
             array[i] = randomAdd.nextInt(Integer.parseInt(userInputValue));
             System.out.print(array[i] + "  ");
         }
