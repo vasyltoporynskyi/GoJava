@@ -7,7 +7,7 @@ import toporynskyi.goit.module05.maxminArray.FindMaxMin;
 import static org.junit.Assert.*;
 
 /**
- * Created by grant on 7/5/16.
+ * Created by grant on 7/1/16.
  */
 public class FindMaxMinTest {
     private static int[] array;

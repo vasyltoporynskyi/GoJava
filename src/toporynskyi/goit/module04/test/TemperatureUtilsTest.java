@@ -7,12 +7,12 @@ import toporynskyi.goit.module04.tempConverter.TemperatureUtils;
 import static org.junit.Assert.*;
 
 /**
- * Created by grant on 7/5/16.
+ * Created by grant on 7/1/16.
  */
 public class TemperatureUtilsTest {
     @Test
     public void main() throws Exception {
-        double cTemp = (double) 30.0; // 30.0
+        double cTemp = 30.0;
         double fTemp;
 
         fTemp = cTemp * 9/5 + 32;
