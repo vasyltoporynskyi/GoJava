@@ -1,28 +1,48 @@
 package toporynskyi.goit.module61;
 
-import java.util.*;
-
 /**
- * Created by grant on 7/6/16.
+ * Created by grant on 7/4/16.
  */
 public class MyArrayList {
-    List<Integer> myArray = new ArrayList<>();
+    private int[] elements;
+    private int size;
+    private int index;
 
+    private static final int CAPACITY = 5;
 
-    public void add(){
-
+    public MyArrayList() {
+        elements = new int[CAPACITY];
     }
 
-    public void get(int index){
-
+    public void add(int value) {
+        if (index == elements.length)
+            growArray();
+        elements[index] = value;
+        index++;
+        size++;
     }
 
-    public void size(){
-
+    private void growArray() {
+        int[] newArray = new int[elements.length * 2];
+        System.arraycopy(elements, 0, newArray, 0, index - 1);
+        elements = newArray;
     }
 
-    public void isEmpty(){
-
+    public int get(int index) {
+        checkIndex(index);
+        return elements[index];
     }
 
+    private void checkIndex(int index) {
+        if (index < 0 || index >= this.index)
+            throw new IllegalArgumentException();
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public int size() {
+        return size;
+    }
 }
