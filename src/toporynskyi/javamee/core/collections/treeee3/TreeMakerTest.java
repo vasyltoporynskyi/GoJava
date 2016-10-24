@@ -1,9 +1,9 @@
-package core.collections.treeee3;
+package toporynskyi.javamee.core.collections.treeee3;
 
-import core.collections.treeee3.binarytree.BinaryTree;
-import core.collections.treeee3.ordertraver.inOrderTraver;
-import core.collections.treeee3.ordertraver.postOrderTraver;
-import core.collections.treeee3.ordertraver.preOrderTraver;
+import toporynskyi.javamee.core.collections.treeee3.binarytree.BinaryTree;
+import toporynskyi.javamee.core.collections.treeee3.ordertraver.inOrderTraver;
+import toporynskyi.javamee.core.collections.treeee3.ordertraver.postOrderTraver;
+import toporynskyi.javamee.core.collections.treeee3.ordertraver.preOrderTraver;
 import org.junit.Before;
 import org.junit.Test;
 

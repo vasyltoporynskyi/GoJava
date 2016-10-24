@@ -1,7 +1,7 @@
-package core.collections.treeee3.ordertraver;
+package toporynskyi.javamee.core.collections.treeee3.ordertraver;
 
-import core.collections.treeee3.TreeTraverses;
-import core.collections.treeee3.binarytree.BinaryNode;
+import toporynskyi.javamee.core.collections.treeee3.TreeTraverses;
+import toporynskyi.javamee.core.collections.treeee3.binarytree.BinaryNode;
 
 import java.util.function.Consumer;
 

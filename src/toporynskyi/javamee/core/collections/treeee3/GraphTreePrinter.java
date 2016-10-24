@@ -1,6 +1,6 @@
-package core.collections.treeee3;
+package toporynskyi.javamee.core.collections.treeee3;
 
-import core.collections.treeee3.binarytree.BinaryNode;
+import toporynskyi.javamee.core.collections.treeee3.binarytree.BinaryNode;
 
 import java.util.ArrayList;
 import java.util.Collections;

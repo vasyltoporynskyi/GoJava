@@ -1,4 +1,4 @@
-package core.collections.treeee3.binarytree;
+package toporynskyi.javamee.core.collections.treeee3.binarytree;
 
 import java.text.Collator;
 import java.util.Locale;

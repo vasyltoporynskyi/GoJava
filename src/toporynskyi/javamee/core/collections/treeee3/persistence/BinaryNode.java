@@ -1,4 +1,4 @@
-package core.collections.treeee3.persistence;
+package toporynskyi.javamee.core.collections.treeee3.persistence;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

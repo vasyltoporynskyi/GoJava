@@ -1,6 +1,6 @@
-package core.collections.treeee3.persistence;
+package toporynskyi.javamee.core.collections.treeee3.persistence;
 
-import core.collections.treeee3.Trees;
+import toporynskyi.javamee.core.collections.treeee3.Trees;
 
 
 

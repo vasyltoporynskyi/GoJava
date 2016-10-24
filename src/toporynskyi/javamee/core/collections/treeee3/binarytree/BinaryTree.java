@@ -1,12 +1,12 @@
-package core.collections.treeee3.binarytree;
+package toporynskyi.javamee.core.collections.treeee3.binarytree;
 
-import core.collections.treeee3.Trees;
+import toporynskyi.javamee.core.collections.treeee3.Trees;
 
 
 
 public class BinaryTree<T extends Comparable<T>> extends Trees
 {
-    public BinaryNode<T> root;
+    public toporynskyi.javamee.core.collections.treeee3.binarytree.BinaryNode<T> root;
 
     @SuppressWarnings("unchecked")
     public void add(T value) {

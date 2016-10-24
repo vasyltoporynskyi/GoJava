@@ -1,4 +1,4 @@
-package core.collections.treeee3;
+package toporynskyi.javamee.core.collections.treeee3;
 
 import java.io.IOException;
 import java.nio.file.Files;
