@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class CollectionAddElement {
 
-    public static void main(String [] args){
+    public static void main(String[] args) {
 
         List<Integer> list = new ArrayList<>();
 
@@ -19,9 +19,8 @@ public class CollectionAddElement {
         list.add(4);
         list.add(5);
 
- //       Iterator<Integer> iterator = list.iterator();
 
-        for (int n: list) {
+        for (int n : list) {
             System.out.println(n + " ");
         }
 
@@ -29,27 +28,25 @@ public class CollectionAddElement {
 
         list.add(5, 6);
 
-        for (int n: list) {
+        for (int n : list) {
             System.out.println(n + " ");
         }
         System.out.println("++++++++++++++++++++++" + "\n");
 
         int element = list.get(5);
 
- //       Iterator<Integer> iterator = list.iterator();
- //       while (iterator.hasNext()) {
-            for(int i = 0; i < list.size() - 1; i++ ){
-                    list.add(element);
-
-                }
+        for(int i = 0; i < 5; i++){
 
 
-
-        for (int n: list) {
-            System.out.println(n + " ");
         }
-        System.out.println("++++++++++++++++++++++" + "\n");
 
-       }
+        Iterator<Integer> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+
+
+
+        }
+
     }
-
+}
